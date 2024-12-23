@@ -8,9 +8,9 @@ require (
 	github.com/CAFxX/httpcompression v0.0.9
 	github.com/SherClockHolmes/webpush-go v1.3.0
 	github.com/TwiN/go-away v1.6.14
-	github.com/andybalholm/cascadia v1.3.2
+	github.com/andybalholm/cascadia v1.3.3
 	github.com/aws/aws-sdk-go v1.55.5
-	github.com/go-chi/chi/v5 v5.1.0
+	github.com/go-chi/chi/v5 v5.2.0
 	github.com/go-fed/activity v1.0.1-0.20220119073622-b14b50eecad0
 	github.com/go-fed/httpsig v1.1.0
 	github.com/gorilla/websocket v1.5.3
@@ -36,7 +36,7 @@ require (
 	github.com/yuin/goldmark-emoji v1.0.4
 	golang.org/x/crypto v0.31.0
 	golang.org/x/mod v0.22.0
-	golang.org/x/net v0.32.0
+	golang.org/x/net v0.33.0
 	golang.org/x/time v0.8.0
 	gopkg.in/evanphx/json-patch.v5 v5.9.0
 	mvdan.cc/xurls/v2 v2.5.0

@@ -39,6 +39,8 @@ export const OfflineEmbed: FC<OfflineEmbedProps> = ({
   useEffect(() => {
     if (!supportsFollows) {
       setCurrentMode(EmbedMode.CannotFollow);
+    } else if (currentMode === EmbedMode.CannotFollow) {
+      setCurrentMode(EmbedMode.CanFollow);
     }
   }, [supportsFollows]);
 
@@ -78,6 +80,11 @@ export const OfflineEmbed: FC<OfflineEmbedProps> = ({
     setLoading(false);
   };
 
+  const handleErrorClose = () => {
+    setErrorMessage('');
+    setCurrentMode(EmbedMode.FollowPrompt);
+  };
+
   const handleAccountChange = a => {
     setRemoteAccount(a);
     if (isValidFediverseAccount(a)) {
@@ -102,7 +109,14 @@ export const OfflineEmbed: FC<OfflineEmbedProps> = ({
             <div className={styles.pageName}>{streamName}</div>
 
             {errorMessage && (
-              <Alert message="Follow Error" description={errorMessage} type="error" showIcon />
+              <Alert
+                message="Follow Error"
+                description={errorMessage}
+                type="error"
+                showIcon
+                closable
+                onClose={handleErrorClose}
+              />
             )}
 
             {currentMode === EmbedMode.CanFollow && (
